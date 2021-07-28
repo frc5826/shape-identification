@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ShapeFactory {
 
-    private static final double MIN_AREA = 500;
+    private static final double MIN_AREA = 1000;
     private static final double MIN_DIST = 50;
 
     public List<Shape> shapesFromContours(List<MatOfPoint> contours){

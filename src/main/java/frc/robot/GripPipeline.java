@@ -24,14 +24,14 @@ public class GripPipeline {
      */
     public List<MatOfPoint> process(Mat source) {
         Mat hslOut = new Mat();
-        double[] hslThresholdHue = {0., 180.};
-        double[] hslThresholdSaturation = {0., 255.0};
+        double[] hslThresholdHue = {0, 180};
+        double[] hslThresholdSaturation = {0, 255.0};
         double[] hslThresholdLuminance = {127., 255.0};
         hslThreshold(source, hslThresholdHue, hslThresholdSaturation, hslThresholdLuminance, hslOut);
 
         Mat rgbOut = new Mat();
-        double[] rgbThresholdRed = {0.0, 127.0};
-        double[] rgbThresholdGreen = {127.0, 255.0};
+        double[] rgbThresholdRed = {0.0, 255};
+        double[] rgbThresholdGreen = {180.0, 255.0};
         double[] rgbThresholdBlue = {127.0, 255.0};
         rgbThreshold(source, rgbThresholdRed, rgbThresholdGreen, rgbThresholdBlue, rgbOut);
 

@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.TimedRobot;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.List;
 
 /**
  * This is a demo program showing the use of OpenCV to do vision processing. The
@@ -60,7 +61,8 @@ public class Robot extends TimedRobot
     @Override
     public void autonomousPeriodic() {
         if(contour.isUpdated()) {
-            System.out.println("Shapes: " + contour.getShapes());
+            List<Shape> shapes = contour.getShapes();
+            System.out.println("Shapes: " + shapes);
             if(lastUpdate != null){
                 System.out.println("Update Time: " + Duration.between(lastUpdate, Instant.now()).toMillis() + "ms");
             }
